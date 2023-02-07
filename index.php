@@ -41,7 +41,7 @@ $autoplay = !isset($_GET["autoplay"]) || $_GET["autoplay"] == "on" ? 1 : 0;
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Multi TV</title>
+    <title>Multi YT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <style>
         .msk-container {
@@ -123,32 +123,32 @@ $autoplay = !isset($_GET["autoplay"]) || $_GET["autoplay"] == "on" ? 1 : 0;
         <div class="offcanvas-body">
             <h5>Channel Count</h5>
             <div class="btn-group w-100" role="group" aria-label="Settings">
-                <a type="button" class="btn btn-outline-light rounded-0<? echo ($channel == 9) ? ' active' : ''; ?>" href=".">9 Channel</a>
-                <a type="button" class="btn btn-outline-light rounded-0<? echo ($channel == 16) ? ' active' : ''; ?>" href="?channel=16">16 Channel</a>
+                <a type="button" class="btn btn-outline-light rounded-0<?php echo ($channel == 9) ? ' active' : ''; ?>" href=".">9 Channel</a>
+                <a type="button" class="btn btn-outline-light rounded-0<?php echo ($channel == 16) ? ' active' : ''; ?>" href="?channel=16">16 Channel</a>
             </div>
 
             <form methot="get" action="">
                 <h5 class="mt-4">Start Settings</h5>
                 <div class="form-check form-switch">
-                    <? echo ($autoplay == 1) ? '<input type="hidden" value="off" name="autoplay">' : ''; ?>
-                    <input class="form-check-input" type="checkbox" role="switch" id="autoplay" name="autoplay" <? echo ($autoplay == 1) ? ' checked="checked"' : ''; ?>>
+                    <?php echo ($autoplay == 1) ? '<input type="hidden" value="off" name="autoplay">' : ''; ?>
+                    <input class="form-check-input" type="checkbox" role="switch" id="autoplay" name="autoplay" <?php echo ($autoplay == 1) ? ' checked="checked"' : ''; ?>>
                     <label class="form-check-label" for="autoplay">Auto Play</label>
                 </div>
 
                 <h5 class="mt-4">Change Channels</h5>
                 <span class="form-text">Enter youtube live video extention to the channel address e.g. XEJM4Hcgd3M</span>
 
-                <input type="hidden" aria-label="Channel" placeholder="Channel" name="channel" value="<? echo $channel; ?>" class="form-control rounded-0">
+                <input type="hidden" aria-label="Channel" placeholder="Channel" name="channel" value="<?php echo $channel; ?>" class="form-control rounded-0">
                 <div id="sortable">
 <?php foreach ($chanels as $cn => $cs) { ?>
                     <div class="input-group mt-1">
-                        <input type="text" aria-label="Channel Name" placeholder="Channel Name" name="cn[]" value="<? echo $cn; ?>" class="form-control rounded-0">
+                        <input type="text" aria-label="Channel Name" placeholder="Channel Name" name="cn[]" value="<?php echo $cn; ?>" class="form-control rounded-0">
                         <span class="input-group-text">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
                             </svg>
                         </span>
-                        <input type="text" aria-label="Channel Address" placeholder="Channel Address" name="cs[]" value="<?echo $cs;?>" class="form-control rounded-0">
+                     <?php   <input type="text" aria-label="Channel Address" placeholder="Channel Address" name="cs[]" value="<?php echo $cs;?>" class="form-control rounded-0">
                     </div>
 <?php } ?> 
                 </div>
