@@ -5,20 +5,20 @@ if (isset($_GET["cn"]) && isset($_GET["cs"])) {
 } else {
     $chanels = [
         "NTV" => "XEJM4Hcgd3M",
-        "CNN Türk" => "X_EWYemclKA",
+        "CNN Türk" => "8VJo-RwKBj8",
         "Habertürk" => "SqHIO2zhxbA",
-        "Haber Global" => "N3M-NHuT2Mw",
+        "Haber Global" => "E6hnoZVjRLQ",
         "TRT Haber" => "Rc5qrxlJZzc",
-        "TV 100" => "8jEXHzMTR7s",
-        "Halk TV" => "uMMM9bYxwXc",
+        "TV 100" => "Vnym1Ioq2Cc",
+        "Halk TV" => "L0aI7O5KrVU",
         "A Haber" => "g4QA9Sh_g_8",
         "24 TV" => "TPbdeNMaAZY",
         "TGRT Haber" => "8YPC2IV7ve0",
         "KRT TV" => "3QDiWPZ2D_k",
-        "TELE 1" => "rZJz0KK6T_o",
+        "TELE 1" => "mRK3wXGdsLk",
         "Bengü Türk" => "7su_1By-cBk",
         "Bloomberg HT" => "hHSmBJk6w0c",
-        "Ulusal Kanal" => "iXrCkshL90g",
+        "Ulusal Kanal" => "SdCJquYL-CQ",
         "Artı TV" => "xpoetRCJKqY",
         "TVNET" => "dkRT6x7EfmY",
         "Ülke TV" => "Fk8MmJCLJvw",
@@ -43,7 +43,8 @@ $autoplay = !isset($_GET["autoplay"]) || $_GET["autoplay"] == "on" ? 1 : 0;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Multi YT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <style>
+    <meta name='referrer' content='no-referrer-when-downgrade'/>
+	<style>
         .msk-container {
             aspect-ratio: 16/9;
             max-height: 100vh;
@@ -95,7 +96,7 @@ $autoplay = !isset($_GET["autoplay"]) || $_GET["autoplay"] == "on" ? 1 : 0;
         $autoplay .
         '&mute=1" title="' .
         $chanel .
-        '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        '" frameborder="0" gesture="media" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         ';
 } ?>
