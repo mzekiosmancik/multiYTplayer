@@ -4,7 +4,7 @@ $langpath ='';
 if (isset($_GET["cn"]) && isset($_GET["cs"])) {
     $chanels = array_combine($_GET["cn"], $_GET["cs"]);
 } else {
-    $chanels = [
+    $chanelstr = [
         "NTV" => "XEJM4Hcgd3M",
         "FOX" => "njp2SpI39pE",
         "Habertürk" => "SqHIO2zhxbA",
@@ -81,7 +81,7 @@ $autoplay = !isset($_GET["autoplay"]) || $_GET["autoplay"] == "on" ? 1 : 0;
     <meta name='referrer' content='no-referrer-when-downgrade'/>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
 	<style>
-        .msk-container {
+       .msk-container {
             aspect-ratio: 16/9;
             max-height: 100vh;
             max-width: 100vw;
@@ -210,14 +210,19 @@ $autoplay = !isset($_GET["autoplay"]) || $_GET["autoplay"] == "on" ? 1 : 0;
             -->
             <h5>Channel Count</h5>
             <div class="btn-group w-100" role="group" aria-label="Settings">
-                <a type="button" class="btn btn-outline-light rounded-0<?php echo ($channel == 9) ? ' active' : ''; ?>" href=".">9 Channel</a>
-                <a type="button" class="btn btn-outline-light rounded-0<?php echo ($channel == 16) ? ' active' : ''; ?>" href="?channel=16">16 Channel</a>
+                <a type="button" class="btn btn-outline-light rounded-0<?php echo $channel ==
+                9
+                    ? " active"
+                    : ""; ?>" href=".">9 Channel</a>
+                <a type="button" class="btn btn-outline-light rounded-0<?php echo $channel ==
+                16
+                    ? " active"
+                    : ""; ?>" href="?channel=16">16 Channel</a>
             </div>
             
             <form methot="get" action="">
                 <h5 class="mt-4">Change Channels</h5>
                 <span class="form-text">Enter youtube live video extention to the channel address e.g. XEJM4Hcgd3M</span>
-
                 <input type="hidden" aria-label="Channel" placeholder="Channel" name="channel" value="<?php echo $channel; ?>" class="form-control rounded-0">
                 <div id="sortable">
 <?php foreach ($chanels as $cn => $cs) { ?>
@@ -228,7 +233,7 @@ $autoplay = !isset($_GET["autoplay"]) || $_GET["autoplay"] == "on" ? 1 : 0;
                                 <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
                             </svg>
                         </span>
-                     <input type="text" aria-label="Channel Address" placeholder="Channel Address" name="cs[]" value="<?php echo $cs;?>" class="form-control rounded-0">
+                     <input type="text" aria-label="Channel Address" placeholder="Channel Address" name="cs[]" value="<?php echo $cs; ?>" class="form-control rounded-0">
                     </div>
 <?php } ?> 
                 </div>
@@ -245,7 +250,6 @@ $autoplay = !isset($_GET["autoplay"]) || $_GET["autoplay"] == "on" ? 1 : 0;
         $( function() {
             $( "#sortable" ).sortable();
         } );
-
         function toggle_fullscreen() {
             if (!document.fullscreenElement && // alternative standard method
                 !document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
