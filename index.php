@@ -246,13 +246,14 @@ $autoplay = !isset($_GET["autoplay"]) || $_GET["autoplay"] == "on" ? 1 : 0;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!--Full screen and sort channels options-->
     <script>
         $( function() {
             $( "#sortable" ).sortable();
         } );
         function toggle_fullscreen() {
-            if (!document.fullscreenElement && // alternative standard method
-                !document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
+            if (!document.fullscreenElement && 
+                !document.mozFullScreenElement && !document.webkitFullscreenElement) {  
                 if (document.documentElement.requestFullscreen) {
                     document.documentElement.requestFullscreen();
                 } else if (document.documentElement.mozRequestFullScreen) {
@@ -272,7 +273,7 @@ $autoplay = !isset($_GET["autoplay"]) || $_GET["autoplay"] == "on" ? 1 : 0;
                 document.body.removeAttribute("fullscreen") 
             }
         }
-        function check_fullscreen() { // Because users can exit & enter fullscreen differently
+        function check_fullscreen() { 
             if (document.fullscreenElement || document.webkitIsFullScreen || document.mozFullScreen) { 
                 document.body.setAttribute("fullscreen","") 
             } else { 
